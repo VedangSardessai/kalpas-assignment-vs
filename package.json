@@ -6,9 +6,16 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "axios": "^1.4.0",
+    "countries-list": "^2.6.1",
+    "firebase": "^10.2.0",
     "react": "^18.2.0",
+    "react-country-list": "^1.0.6",
     "react-dom": "^18.2.0",
+    "react-dotenv": "^0.1.3",
+    "react-icons": "^4.10.1",
     "react-scripts": "5.0.1",
+    "styled-components": "^6.0.7",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
