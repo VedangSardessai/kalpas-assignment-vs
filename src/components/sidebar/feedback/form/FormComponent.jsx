@@ -8,7 +8,6 @@ import { getAllCountries } from "react-country-list";
 const FormComponent = () => {
   const [emailError, setEmailError] = useState(false);
   const [numberError, setNumberError] = useState(false);
-  const [codeError, setCodeError] = useState(false);
   const [toast, setToast] = useState(false);
 
   const [countryList] = useState(getAllCountries());
@@ -53,12 +52,12 @@ const FormComponent = () => {
     const isPhoneNumberValid = validatePhoneNumber(phone_number);
 
     setEmailError(!isEmailValid);
-    setCodeError(!isCountryCodeValid);
-    setNumberError(!isPhoneNumberValid);
+
+    if (!isCountryCodeValid || !isPhoneNumberValid)
+      setNumberError(!isPhoneNumberValid);
 
     if (isEmailValid && isCountryCodeValid && isPhoneNumberValid) {
-      // Submit the form data
-      // ...
+      
       await setDoc(
         doc(db, "feedback", formData.country_code + formData.phone_number),
         {
@@ -72,7 +71,6 @@ const FormComponent = () => {
       );
 
       setEmailError(false);
-      setCodeError(false);
       setNumberError(false);
       setToast(true);
 
@@ -216,25 +214,13 @@ const FormComponent = () => {
             />
           </PhoneNumberField>
 
-          {codeError && (
-            <ErrorSpan
-              style={{
-                position: "absolute",
-                top: "595px",
-                left: "420px",
-              }}
-            >
-              {" "}
-              Please Enter a valid code
-            </ErrorSpan>
-          )}
           {numberError && (
             <ErrorSpan
               style={{
                 position: "absolute",
-                top: "610px",
-                left: "420px",
-                // marginBottom: "-50px",
+                width:'300px',
+                top: "620px",
+                left: "400px",
               }}
             >
               {" "}
@@ -366,19 +352,19 @@ const ErrorSpan = styled.span`
 const CountryDropdown = styled.datalist`
   position: absolute;
   right: 10px;
-  top: calc(50% - 8px); /* Vertically center the icon */
+  top: calc(50% - 8px); 
 
-  /* Set the size of the custom icon */
+  
   width: 16px;
   height: 16px;
 
-  /* Set the background image */
-  background-image: url("https://img.icons8.com/search"); /* Update the path */
+  
+  background-image: url("https://img.icons8.com/search"); 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-  /* Hide the default dropdown arrow */
+  
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;

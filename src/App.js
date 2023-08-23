@@ -7,7 +7,7 @@ import "./firebase";
 function App() {
   const [gridActive, setGridActive] = useState(false);
   const [listening, setlistening] = useState(true);
-  const [blurEffect, setBlurEffect] = useState(false); // Add blurEffect state
+  const [blurEffect, setBlurEffect] = useState(false); 
 
   return (
     <div className="App">
@@ -16,11 +16,10 @@ function App() {
          
           gridActive={gridActive}
           setGridActive={setGridActive}
-          blurEffect={blurEffect} // Pass blurEffect to Sidebar
-          setBlurEffect={setBlurEffect} // Pass setBlurEffect to Sidebar
+          blurEffect={blurEffect} 
+          setBlurEffect={setBlurEffect} 
         />
         <News gridActive={gridActive} blurEffect={blurEffect} />{" "}
-        {/* Pass blurEffect to News */}
       </Container>
     </div>
   );

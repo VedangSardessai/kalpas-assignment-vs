@@ -5,24 +5,3 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-
-::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
-  color: #dddddd;
-}
-:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #dddddd;
-  opacity: 1;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: #dddddd;
-}
-
-::placeholder {
-  /* Most modern browsers support this now. */
-  color: #c9c7c7;
-}
-

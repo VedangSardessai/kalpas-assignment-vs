@@ -101,7 +101,6 @@ const News = ({ gridActive, blurEffect, listening }) => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
   const handleRemoveNewsItem = (itemId) => {
-    // Filter out the news item with the given itemId
     const updatedNewsData = newsData.filter((item) => item.id !== itemId);
     setNewsData(updatedNewsData);
   };
@@ -196,7 +195,6 @@ const News = ({ gridActive, blurEffect, listening }) => {
                               }}
                               className="body"
                             >
-                              {/* {post.body} */}
                               {post.body}...
                             </p>
                             <p className="time">
@@ -279,6 +277,16 @@ const News = ({ gridActive, blurEffect, listening }) => {
   );
 };
 
+const fadeInNewsView = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+
 const NewsDiv = styled.div`
   display: flex;
   justify-content: right;
@@ -297,7 +305,7 @@ const GridView = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
-  /* Additional styles for grid view */
+  animation: ${fadeInNewsView} 0.5s ease-in-out;
 `;
 
 const GridNewsCard = styled.div`
@@ -385,14 +393,11 @@ const NewsCard = styled.div`
   padding-left: 10px;
   background-color: white;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a box shadow */
-
-  /* Apply white-space: nowrap to the title */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   .title {
     white-space: nowrap;
   }
 
-  /* Apply white-space: nowrap to the body content */
   .body {
     flex-grow: 1;
     max-width: 80%;
@@ -413,7 +418,6 @@ const RemoveButton = styled.button`
   border-radius: 50%;
   border: none;
   color: #f09794;
-  /* margin-right: 20px; */
   margin-left: -20px;
   font-size: 22px;
   font-weight: bold;
@@ -425,7 +429,7 @@ const RemoveButton = styled.button`
 `;
 const ListView = styled.div`
   margin-top: 30px;
-  /* Additional styles for list view */
+  animation: ${fadeInNewsView} 0.5s ease-in-out;
 `;
 
 const NewsItem = styled.div`

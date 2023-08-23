@@ -33,16 +33,16 @@ const FeedbackDiv = styled.div`
   margin-left: 10%;
   padding-top: 2px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  margin-top: 50px; /* Add margin to separate User and FeedbackDiv */
-  text-align: center; /* Center the content horizontally */
+  margin-top: 50px; 
+  text-align: center; 
 `;
 
 const FeedbackButtonContainer = styled.div`
   padding: 0px 10px 10px 10px;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  margin-top: 10px; /* Add some spacing between the icons and the header */
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 10px; 
 `;
 const FeedbackButton = styled.span`
   cursor: pointer;
