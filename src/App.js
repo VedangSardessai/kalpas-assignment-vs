@@ -6,7 +6,6 @@ import { useState } from "react";
 import "./firebase";
 function App() {
   const [gridActive, setGridActive] = useState(false);
-  const [listening, setlistening] = useState(true);
   const [blurEffect, setBlurEffect] = useState(false); 
 
   return (
