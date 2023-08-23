@@ -51,13 +51,12 @@ const FormComponent = () => {
     const isCountryCodeValid = validateCountryCode(country_code);
     const isPhoneNumberValid = validatePhoneNumber(phone_number);
 
+    console.log(isCountryCodeValid);
     setEmailError(!isEmailValid);
 
-    if (!isCountryCodeValid || !isPhoneNumberValid)
-      setNumberError(!isPhoneNumberValid);
+    if (!isCountryCodeValid || !isPhoneNumberValid) setNumberError(true);
 
     if (isEmailValid && isCountryCodeValid && isPhoneNumberValid) {
-      
       await setDoc(
         doc(db, "feedback", formData.country_code + formData.phone_number),
         {
@@ -218,7 +217,7 @@ const FormComponent = () => {
             <ErrorSpan
               style={{
                 position: "absolute",
-                width:'300px',
+                width: "300px",
                 top: "620px",
                 left: "400px",
               }}
@@ -352,19 +351,16 @@ const ErrorSpan = styled.span`
 const CountryDropdown = styled.datalist`
   position: absolute;
   right: 10px;
-  top: calc(50% - 8px); 
+  top: calc(50% - 8px);
 
-  
   width: 16px;
   height: 16px;
 
-  
-  background-image: url("https://img.icons8.com/search"); 
+  background-image: url("https://img.icons8.com/search");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
-  
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
