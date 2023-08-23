@@ -114,7 +114,7 @@ const News = ({ gridActive, blurEffect, listening }) => {
     <>
       <NewsDiv
         style={{
-          marginTop: gridActive ? "100px" : "20px",
+          marginTop: "20px",
           filter: blurEffect || isBlur ? "blur(5px)" : "none", // Apply blur effect based on blurEffect state
           pointerEvents: blurEffect || isBlur ? "none" : "auto",
         }}
@@ -154,7 +154,7 @@ const News = ({ gridActive, blurEffect, listening }) => {
                               height: "80px",
                               width: "100%",
                             }}
-                            src={imgData[index]?.download_url}
+                            src={imgData[index + startIndex]?.download_url}
                           />
                         </ImageContainer>
                         <GridRemoveButton
@@ -184,7 +184,7 @@ const News = ({ gridActive, blurEffect, listening }) => {
                                 width: "50px",
                                 borderRadius: "60%",
                               }}
-                              src={imgData[index]?.download_url}
+                              src={imgData[index + startIndex]?.download_url}
                             />
                           </ImageContainer>
                           <div>
@@ -286,11 +286,10 @@ const fadeInNewsView = keyframes`
   }
 `;
 
-
 const NewsDiv = styled.div`
   display: flex;
   justify-content: right;
-  margin-left: 450px;
+  margin-left: 410px;
 
   @media (min-width: 948px) {
     margin-right: 25%;
@@ -306,6 +305,8 @@ const GridView = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
   animation: ${fadeInNewsView} 0.5s ease-in-out;
+  margin-top: 30px;
+  margin-left: 10px;
 `;
 
 const GridNewsCard = styled.div`
@@ -446,7 +447,11 @@ const ImageContainer = styled.div`
 const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
+  position: absolute;
   margin-top: 20px;
+  left: 50%;
+  top: 90%;
+  width: 300px;
 `;
 
 const fadeIn = keyframes`
