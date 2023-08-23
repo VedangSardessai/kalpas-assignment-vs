@@ -49,7 +49,11 @@ const Sidebar = ({ gridActive, setGridActive, blurEffect, setBlurEffect }) => {
                 }}
                 onClick={() => setGridActive(true)}
               >
-                <FaNewspaper />
+                <FaNewspaper
+                  style={{
+                    color: gridActive ? "black" : "rgb(186, 185, 185)",
+                  }}
+                />
               </GridSpan>
               <ListSpan
                 onClick={() => setGridActive(false)}
@@ -57,7 +61,11 @@ const Sidebar = ({ gridActive, setGridActive, blurEffect, setBlurEffect }) => {
                   backgroundColor: !gridActive ? "#96ebc6" : "#dae3ea",
                 }}
               >
-                <AiOutlineUnorderedList />
+                <AiOutlineUnorderedList
+                  style={{
+                    color: !gridActive ? "black" : "rgb(186, 185, 185)",
+                  }}
+                />
               </ListSpan>
             </ButtonsContainer>
           </ViewToggle>
@@ -119,7 +127,6 @@ const SidebarDiv = styled.div`
     `}
 `;
 
-
 const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
@@ -135,7 +142,7 @@ const User = styled.div`
   width: 280px;
   border-radius: 10px;
   margin-left: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 `;
 
 const ImageContainer = styled.div`
@@ -154,16 +161,16 @@ const ViewToggle = styled.div`
 
   padding-top: 2px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  margin-top: 50px; 
-  text-align: center; 
+  margin-top: 50px;
+  text-align: center;
 `;
 
 const ButtonsContainer = styled.div`
   padding: 0px 10px 10px 10px;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  margin-top: 10px; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 `;
 const ListSpan = styled.span`
   cursor: pointer;
@@ -189,16 +196,16 @@ const FeedbackDiv = styled.div`
 
   padding-top: 2px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  margin-top: 50px; 
-  text-align: center; 
+  margin-top: 50px;
+  text-align: center;
 `;
 
 const FeedbackButtonContainer = styled.div`
   padding: 0px 10px 10px 10px;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  margin-top: 10px; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 `;
 const FeedbackButton = styled.span`
   cursor: pointer;
@@ -222,7 +229,7 @@ const fadeIn = keyframes`
   }
 `;
 const FadeInDiv = styled.div`
-  animation: ${fadeIn} 1s ease-in-out; 
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 const FeedbackInputSection = styled.div`
   margin-left: 200px;
