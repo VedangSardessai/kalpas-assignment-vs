@@ -447,11 +447,9 @@ const ImageContainer = styled.div`
 const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
-  position: absolute;
+  align-items: center;
   margin-top: 20px;
-  left: 50%;
-  top: 90%;
-  width: 300px;
+  width: 100%;
 `;
 
 const fadeIn = keyframes`
